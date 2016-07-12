@@ -3,7 +3,7 @@
 ## First steps
 
 * create postgresql database and table according to *database_config.js*
-* download or ask your colleagues for the ip mapping table (too big to load into this repository) with following columns:
+* download or ask your colleagues for the ip mapping table (too big to load into this repository) with the following columns:
   * ip number from
   * ip number to
   * country_code
