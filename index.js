@@ -19,7 +19,13 @@ server.register(database, (err) => {
     if (err) {
         console.error('Failed loading "hapi-node-postgres" plugin');
     }
- });
+});
+
+server.register(require('./plugins/internal-header-auth'), (err) => {
+  if(err){
+    console.error('Failed loading "internal-header-auth" plugin');
+  }
+})
 
 // Add the route
 server.route({
@@ -43,6 +49,9 @@ server.route({
 
           return reply(result);
         });
+    },
+    config: {
+      auth: 'internalHeader'
     }
 });
 
@@ -57,6 +66,9 @@ server.route({
 
           return reply(result);
         });
+    },
+    config: {
+      auth: 'internalHeader'
     }
 });
 
@@ -72,6 +84,9 @@ server.route({
 
           return reply(result);
         });
+    },
+    config: {
+      auth: 'internalHeader'
     }
 });
 
